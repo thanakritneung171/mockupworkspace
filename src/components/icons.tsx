@@ -56,6 +56,25 @@ export function MailIcon(p: IconProps) {
   );
 }
 
+export function CalendarIcon(p: IconProps) {
+  return (
+    <svg {...base} {...p}>
+      <rect x="3" y="4" width="18" height="18" rx="2.5" />
+      <path d="M16 2v4M8 2v4M3 10h18" />
+    </svg>
+  );
+}
+
+export function ContactIcon(p: IconProps) {
+  return (
+    <svg {...base} {...p}>
+      <circle cx="12" cy="8" r="3.5" />
+      <path d="M4 20a8 8 0 0 1 16 0" />
+      <path d="M19 4h2a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-2" />
+    </svg>
+  );
+}
+
 export function ChatIcon(p: IconProps) {
   return (
     <svg {...base} {...p}>
@@ -77,6 +96,15 @@ export function FilesIcon(p: IconProps) {
   return (
     <svg {...base} {...p}>
       <path d="M3 7a2 2 0 0 1 2-2h4l2 2.5h8a2 2 0 0 1 2 2V18a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+    </svg>
+  );
+}
+
+export function UsersIcon(p: IconProps) {
+  return (
+    <svg {...base} {...p}>
+      <circle cx="9" cy="8" r="3" />
+      <path d="M3 20a6 6 0 0 1 12 0M16 4a3 3 0 0 1 0 6M21 20a6 6 0 0 0-5-5.9" />
     </svg>
   );
 }
@@ -131,6 +159,40 @@ export function CheckIcon(p: IconProps) {
   );
 }
 
+export function XIcon(p: IconProps) {
+  return (
+    <svg {...base} strokeWidth={2} {...p}>
+      <path d="M18 6L6 18M6 6l12 12" />
+    </svg>
+  );
+}
+
+export function ChevronRightIcon(p: IconProps) {
+  return (
+    <svg {...base} strokeWidth={2} {...p}>
+      <path d="M9 18l6-6-6-6" />
+    </svg>
+  );
+}
+
+export function EditIcon(p: IconProps) {
+  return (
+    <svg {...base} {...p}>
+      <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+      <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4z" />
+    </svg>
+  );
+}
+
+export function TrashIcon(p: IconProps) {
+  return (
+    <svg {...base} {...p}>
+      <path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6" />
+      <path d="M10 11v6M14 11v6" />
+    </svg>
+  );
+}
+
 export function SubscriptionIcon(p: IconProps) {
   return (
     <svg {...base} {...p}>
@@ -168,15 +230,6 @@ export function StorageIcon(p: IconProps) {
   );
 }
 
-export function UsersIcon(p: IconProps) {
-  return (
-    <svg {...base} {...p}>
-      <circle cx="9" cy="8" r="3" />
-      <path d="M3 20a6 6 0 0 1 12 0M16 4a3 3 0 0 1 0 6M21 20a6 6 0 0 0-5-5.9" />
-    </svg>
-  );
-}
-
 export function ClockIcon(p: IconProps) {
   return (
     <svg {...base} {...p}>
@@ -206,6 +259,43 @@ export function BuildingIcon(p: IconProps) {
   return (
     <svg {...base} {...p}>
       <path d="M3 21h18M5 21V7l7-4 7 4v14M9 9h.01M15 9h.01M9 13h.01M15 13h.01M9 17h.01M15 17h.01" />
+    </svg>
+  );
+}
+
+export function InfoIcon(p: IconProps) {
+  return (
+    <svg {...base} {...p}>
+      <circle cx="12" cy="12" r="10" />
+      <path d="M12 8v4M12 16h.01" />
+    </svg>
+  );
+}
+
+export function AlertIcon(p: IconProps) {
+  return (
+    <svg {...base} {...p}>
+      <path d="M10.3 3.5L2 19h20L13.7 3.5a2 2 0 0 0-3.4 0z" />
+      <path d="M12 9v4M12 17h.01" />
+    </svg>
+  );
+}
+
+export function ShieldIcon(p: IconProps) {
+  return (
+    <svg {...base} {...p}>
+      <path d="M12 3l8 4v5c0 4.4-3.4 8.5-8 10-4.6-1.5-8-5.6-8-10V7z" />
+    </svg>
+  );
+}
+
+export function ShareIcon(p: IconProps) {
+  return (
+    <svg {...base} {...p}>
+      <circle cx="18" cy="5" r="3" />
+      <circle cx="6" cy="12" r="3" />
+      <circle cx="18" cy="19" r="3" />
+      <path d="M8.6 13.5l6.8 4M15.4 6.5L8.6 10.5" />
     </svg>
   );
 }

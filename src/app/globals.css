@@ -1,43 +1,43 @@
 @import "tailwindcss";
 
 @theme {
-  /* frame / sidebar */
-  --color-frame: #0e1b30;
-  --color-frame-2: #0c1626;
-  --color-frame-line: #1f3251;
-  --color-frame-text: #9fb2cd;
-  --color-frame-dim: #6d83a3;
+  /* sidebar */
+  --color-frame:      #0c1322;
+  --color-frame-2:    #0c1322;
+  --color-frame-line: #1c2941;
+  --color-frame-text: #94a3b8;
+  --color-frame-dim:  #5b6b85;
 
   /* surfaces */
-  --color-ground: #f4f6f9;
-  --color-card: #ffffff;
-  --color-line: #e7ebf1;
+  --color-ground: #f1f5f9;
+  --color-card:   #ffffff;
+  --color-line:   #e5e9f0;
 
   /* text */
-  --color-ink: #1f2a37;
-  --color-ink-soft: #5b6b7e;
-  --color-ink-faint: #93a1b3;
+  --color-ink:       #0f172a;
+  --color-ink-soft:  #64748b;
+  --color-ink-faint: #94a3b8;
 
   /* brand */
-  --color-accent: #2f6fed;
-  --color-accent-soft: #eaf1fe;
-  --color-accent-2: #f5832a;
+  --color-accent:      #2563eb;
+  --color-accent-soft: #eaf1ff;
+  --color-accent-2:    #f59e0b;
 
-  /* stat palette */
-  --color-c-blue: #4a90e2;
-  --color-c-green: #33a35e;
-  --color-c-coral: #ef6f6f;
+  /* status */
+  --color-ok:      #22c55e;
+  --color-ok-soft: #dcfce7;
+
+  /* stat palette (kept for dashboard) */
+  --color-c-blue:   #4a90e2;
+  --color-c-green:  #33a35e;
+  --color-c-coral:  #ef6f6f;
   --color-c-yellow: #f3c032;
   --color-c-purple: #8b5cf6;
 
-  /* status */
-  --color-ok: #1aa564;
-  --color-ok-soft: #e3f6ec;
+  --font-sans: var(--font-anuphan), ui-sans-serif, system-ui, sans-serif;
 
-  --font-sans: var(--font-app-sans), var(--font-thai), ui-sans-serif, system-ui, sans-serif;
-
-  --radius-card: 14px;
-  --shadow-card: 0 1px 2px rgba(16, 30, 54, 0.04), 0 6px 20px rgba(16, 30, 54, 0.06);
+  --radius-card: 16px;
+  --shadow-card: 0 1px 3px rgba(16,24,40,.06);
 }
 
 html,
@@ -64,9 +64,9 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    font-size: 11.5px;
+    font-size: 12px;
     font-weight: 600;
-    padding: 4px 11px;
+    padding: 3px 10px;
     border-radius: 9999px;
   }
 
@@ -106,7 +106,7 @@ body {
     border-bottom: none;
   }
   .data-table tbody tr:hover {
-    background: #fafbfd;
+    background: #f8fafc;
   }
 }
 

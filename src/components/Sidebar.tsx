@@ -19,48 +19,71 @@ export default function Sidebar({ open, onClose }: { open: boolean; onClose: () 
       />
 
       <aside
-        className={`fixed z-40 flex h-screen w-64 shrink-0 flex-col bg-gradient-to-b from-frame to-frame-2 text-frame-text transition-transform md:sticky md:top-0 md:translate-x-0 ${
+        className={`fixed z-40 flex h-screen w-[248px] shrink-0 flex-col transition-transform md:sticky md:top-0 md:translate-x-0 ${
           open ? "translate-x-0" : "-translate-x-full"
         }`}
+        style={{ background: "#0c1322" }}
       >
         {/* brand */}
-        <div className="flex items-center gap-3 border-b border-frame-line px-[22px] py-5">
-          <span className="grid h-[34px] w-[34px] shrink-0 place-items-center rounded-[9px] bg-gradient-to-br from-accent-2 to-[#e85b2a] shadow-[0_4px_12px_rgba(232,91,42,0.35)]">
-            <svg viewBox="0 0 24 24" className="h-5 w-5">
-              <path d="M3 19L9 8l4 6 2-3 3 8H3z" fill="#fff" />
-            </svg>
-          </span>
-          <span className="leading-tight">
-            <span className="block text-base font-bold tracking-[0.2px] text-white">Debut Platform</span>
-            <span className="block text-[11px] font-medium tracking-[0.4px] text-frame-dim">Workspace Management</span>
+        <div className="flex items-center gap-0 px-5 py-5" style={{ borderBottom: "1px solid #1c2941" }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo-transparent.png" alt="Debut" style={{ height: 38, objectFit: "contain" }} />
+          <span className="ml-2.5 leading-tight">
+            <span className="block text-[14px] font-bold text-white" style={{ letterSpacing: "0.2px" }}>
+              Debut Workspace
+            </span>
+            <span className="block text-[10.5px] font-medium" style={{ color: "#5b6b85" }}>
+              Management Platform
+            </span>
           </span>
         </div>
 
         {/* nav */}
-        <nav className="flex flex-col gap-[3px] overflow-y-auto p-[14px]">
+        <nav className="flex flex-col gap-[2px] overflow-y-auto p-[14px]">
           {navGroups.map((group) => (
-            <div key={group.label}>
-              <div className="px-3 pb-1.5 pt-3.5 text-[10.5px] font-semibold uppercase tracking-[1.4px] text-frame-dim">
+            <div key={group.label} className="mb-1">
+              <div
+                className="px-3 pb-2 pt-3 text-[10px] font-bold uppercase"
+                style={{ color: "#5b6b85", letterSpacing: ".09em" }}
+              >
                 {group.label}
               </div>
               {group.items.map((item) => {
-                const active = pathname === item.href;
+                const active = pathname === item.href || pathname.startsWith(item.href + "/");
                 const Icon = item.icon;
                 return (
                   <Link
                     key={item.href}
                     href={item.href}
                     onClick={onClose}
-                    className={`relative flex w-full items-center gap-3 rounded-[10px] px-3 py-[11px] text-sm font-medium transition-colors ${
+                    className={`relative flex w-full items-center gap-[10px] rounded-[9px] px-[11px] py-[9px] text-[13.5px] transition-colors ${
                       active
-                        ? "bg-accent/15 font-semibold text-[#cfe0ff] before:absolute before:bottom-2 before:left-0 before:top-2 before:w-[3px] before:rounded-r before:bg-accent before:content-['']"
-                        : "text-frame-text hover:bg-white/5 hover:text-[#dde7f5]"
+                        ? "font-semibold text-white"
+                        : "font-medium hover:text-white"
                     }`}
+                    style={{
+                      background: active ? "#1c2941" : "transparent",
+                      color: active ? "#ffffff" : "#94a3b8",
+                    }}
+                    onMouseEnter={(e) => {
+                      if (!active) (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,.05)";
+                    }}
+                    onMouseLeave={(e) => {
+                      if (!active) (e.currentTarget as HTMLElement).style.background = "transparent";
+                    }}
                   >
-                    <Icon className={`h-[19px] w-[19px] shrink-0 ${active ? "text-[#7ab0ff] opacity-100" : "opacity-85"}`} />
+                    <Icon className="h-[18px] w-[18px] shrink-0" />
                     <span className="flex-1">{item.label}</span>
                     {item.badge ? (
-                      <span className="rounded-full bg-accent-2 px-[7px] py-px text-[10px] font-bold text-white">
+                      <span
+                        className="rounded-full px-[7px] py-px text-[10px] font-bold text-white"
+                        style={{
+                          background:
+                            item.badge === "New"
+                              ? "linear-gradient(135deg,#f59e0b,#ef4444)"
+                              : "#2563eb",
+                        }}
+                      >
                         {item.badge}
                       </span>
                     ) : null}
@@ -72,13 +95,21 @@ export default function Sidebar({ open, onClose }: { open: boolean; onClose: () 
         </nav>
 
         {/* footer */}
-        <div className="mt-auto flex items-center gap-3 border-t border-frame-line p-4 text-[13px]">
-          <span className="grid h-[34px] w-[34px] shrink-0 place-items-center rounded-full bg-gradient-to-br from-accent to-[#7a5cf0] text-[13px] font-bold text-white">
+        <div
+          className="mt-auto flex items-center gap-3 p-4"
+          style={{ borderTop: "1px solid #1c2941" }}
+        >
+          <span
+            className="grid h-9 w-9 shrink-0 place-items-center rounded-full text-[13px] font-bold text-white"
+            style={{ background: "linear-gradient(135deg,#3b82f6,#6366f1)" }}
+          >
             U
           </span>
           <span className="leading-tight">
-            <b className="block text-[13px] font-semibold text-[#e7eefb]">useradmin4</b>
-            <span className="text-[11.5px] text-frame-dim">debutmail.comth</span>
+            <b className="block text-[13px] font-semibold text-white">useradmin4</b>
+            <span className="text-[11px]" style={{ color: "#5b6b85" }}>
+              debutmail.comth
+            </span>
           </span>
         </div>
       </aside>
